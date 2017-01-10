@@ -20,7 +20,8 @@ export class AppComponent implements OnInit {
   constructor(private studentService: StudentService) {
   };
   getStudents(): void {
-    this.students = this.studentService.getStudents();
+    this.studentService.getStudents()
+    .then(students => this.students = students);
   };
   selectedStudent: Student;
   onSelect(student: Student): void {

@@ -5,7 +5,7 @@ import { STUDENTS } from '../mock-students';
 
 @Injectable()
 export class StudentService {
-  getStudents(): Student[] {
-    return STUDENTS;
-  } // stub
+  getStudents(): Promise<Student[]> {
+    return Promise.resolve(STUDENTS);
+  }
 }
